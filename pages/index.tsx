@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next/types'
 
 export default function Home() {
   return (
@@ -17,4 +18,11 @@ export default function Home() {
       </p>
     </>
   )
+}
+
+export async function getStaticProps (context: GetStaticPropsContext):
+  Promise<GetStaticPropsResult<{}>> {
+  return {
+    props: {}
+  }
 }
