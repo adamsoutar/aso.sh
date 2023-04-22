@@ -1,13 +1,19 @@
-import { ReactFCWithChildren } from '@/types/react'
-import { css } from '@emotion/react'
+interface Props {
+  children?: React.ReactNode
+  round?: boolean
+  className?: string
+}
 
 // A div with a border radius that sits on a fancy shadow
-const ElevatedCard: ReactFCWithChildren = ({ children }) => {
+const ElevatedCard: React.FC<Props> = ({ children, round, ...props }) => {
   return (
     <div
-      css={css`
-        background-color: red;
-      `}
+      css={{
+        backgroundColor: 'red',
+        borderRadius: round ? '50%' : '16px',
+        boxShadow: '0px 4px 11px 4px #000000'
+      }}
+      {...props}
     >
       {children}
     </div>
