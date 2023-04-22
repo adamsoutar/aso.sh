@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <RotatingImageCard
         verb='made'
-        items={[{ label: 'Mastermine', imageUrl: '' }]}
+        items={[{ label: 'Mastermine', imageUrl: './mastermine.jpg' }]}
         css={{
           width: '11.6em',
           height: '5.4em'

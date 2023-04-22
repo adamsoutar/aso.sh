@@ -19,11 +19,28 @@ const RotatingImageCard: React.FC<Props> = ({ verb, items, ...props }) => {
     <ElevatedCard
       css={{
         padding: '0.5em',
-        lineHeight: '1em'
+        lineHeight: '1em',
+        overflow: 'hidden'
       }}
+      gradientColourOne='#AA38A5'
+      gradientColourTwo='#171D53'
       {...props}
     >
-      I {verb} {items[0].label}
+      <div
+        css={{
+          backgroundImage: `url(${items[0].imageUrl})`,
+          backgroundSize: 'cover',
+          opacity: 0.5,
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0
+        }}
+      />
+      <div css={{ position: 'relative' }}>
+        I {verb} {items[0].label}
+      </div>
     </ElevatedCard>
   )
 }
